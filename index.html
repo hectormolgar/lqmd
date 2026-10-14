@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1a0f0a">
+<meta name="description" content="Lo que muere dentro. Web oficial del mediometraje del Grupo 1 del Proyecto Transversal de 3º de Comunicación Audiovisual (UFV Madrid).">
+<title>Lo que muere dentro · Grupo 1 · Proyecto Transversal (UFV)</title>
+<style>
+/* ==========================================================================
+   ESTILOS BARROCOS: "LO QUE MUERE DENTRO"
+   Estética: Tenebrismo, pan de oro, pergamino envejecido, cuero repujado,
+   claroscuro dramático, filigranas de imprenta y tipografía Times New Roman.
+   ========================================================================== */
+
+:root {
+  /* Tipografía clásica */
+  --serif: "Times New Roman", Times, "Baskerville", "Playfair Display", Georgia, serif;
+  
+  /* Paleta cromática barroca */
+  --tinta: #1c120c;
+  --tinta-suave: #3d2b1f;
+  --tinta-sepia: #543821;
+  --papel: #ede1c4;
+  --papel-claro: #fbf5e6;
+  --papel-oscuro: #dac59d;
+  --pergamino-quemado: #8a6332;
+  
+  --oro: #cba135;
+  --oro-brillante: #f4d368;
+  --oro-antiguo: #8c671a;
+  --oro-sombra: #4e380a;
+  
+  --carmesin: #7a151b;
+  --carmesin-oscuro: #46090e;
+  --carmesin-vivo: #a82029;
+  
+  --purpura: #481f66;
+  --azul-ultramar: #163768;
+  --ceniza: #36322e;
+  
+  --hh: 4.8rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background: #0c0704; }
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--tinta);
+  background-color: #120b07;
+  /* Textura de claroscuro tenebrista y pergamino profundo */
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(244, 211, 104, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 50% 85%, rgba(122, 21, 27, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse at 50% 50%, #22140c 0%, #0c0704 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Selección en oro y carmesí */
+::selection { background: var(--carmesin); color: var(--oro-brillante); }
+
+img, svg { max-width: 100%; display: block; }
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.6em;
+  color: #26150b;
+}
+
+p { margin: 0 0 1.2em; max-width: 72ch; }
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--oro-brillante);
+  outline-offset: 3px;
+  box-shadow: 0 0 15px rgba(244, 211, 104, 0.6);
+}
+
+button { font: inherit; color: inherit; cursor: pointer; }
+
+.sr {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.salto {
+  position: absolute; left: 1rem; top: -5rem;
+  background: var(--oro-brillante); color: #000;
+  padding: 0.6rem 1.4rem; z-index: 100;
+  font-weight: bold; border: 2px solid #000;
+  transition: top 0.3s;
+}
+.salto:focus { top: 1rem; }
+
+.cont {
+  width: min(100% - 2.5rem, 70rem);
+  margin-inline: auto;
+}
+
+/* Divisores ornamentales barrocos */
+.floron {
+  text-align: center;
+  color: var(--oro-antiguo);
+  font-size: 1.5rem;
+  line-height: 1;
+  margin: 1.5rem 0;
+  user-select: none;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.4));
+}
+.floron::before, .floron::after {
+  content: " ~ ❦ ~ ";
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   CABECERA DEL GRUPO (Sello de cera, moldura de oro y caoba)
+   ========================================================================== */
+.cab-grupo {
+  position: sticky; top: 0; z-index: 40;
+  background: linear-gradient(180deg, #1f120a 0%, #160c07 100%);
+  border-bottom: 2px solid var(--oro);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 230, 150, 0.2);
+  padding: 0.6rem 1.2rem;
+  color: var(--papel-claro);
+}
+
+.cab-grupo .fila {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 0.6rem 1.5rem;
+  width: min(100%, 70rem); margin-inline: auto;
+}
+
+.marca { display: flex; align-items: center; gap: 1rem; }
+
+/* Sello de cera carmesí con relieve realista */
+.sello {
+  width: 3.2rem; height: 3.2rem; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #a82029 0%, #680e14 60%, #3a060a 100%);
+  color: var(--oro-brillante);
+  display: grid; place-items: center;
+  font: bold 1rem/1 var(--serif);
+  letter-spacing: 0.08em;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.8), 0 1px 1px rgba(255,230,150,0.5);
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.6),
+    inset 0 0 0 2px rgba(244, 211, 104, 0.4),
+    inset 2px 2px 4px rgba(255,255,255,0.25),
+    inset -2px -2px 6px rgba(0,0,0,0.8);
+  border: 1px dashed rgba(244, 211, 104, 0.3);
+  position: relative;
+  flex: none;
+  transition: transform 0.3s ease;
+}
+.sello:hover { transform: scale(1.06) rotate(-4deg); }
+
+.cab-grupo p { margin: 0; font-size: 0.95rem; line-height: 1.35; color: #dfceb0; }
+.cab-grupo strong {
+  font-size: 1.15rem; color: var(--oro-brillante);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+
+.cab-grupo details { font-size: 0.95rem; position: relative; }
+.cab-grupo summary {
+  cursor: pointer; padding: 0.4rem 0.9rem;
+  border: 1px solid var(--oro-antiguo);
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 2px;
+  color: var(--oro-brillante);
+  transition: all 0.25s ease;
+  user-select: none;
+}
+.cab-grupo summary:hover {
+  background: var(--carmesin-oscuro);
+  border-color: var(--oro-brillante);
+  box-shadow: 0 0 10px rgba(244, 211, 104, 0.3);
+}
+
+.cab-grupo ul {
+  list-style: none; margin: 0.5rem 0 0;
+  padding: 1rem 1.4rem;
+  display: flex; flex-direction: column; gap: 0.4rem;
+  background: #1b1009;
+  border: 2px solid var(--oro);
+  border-image: linear-gradient(135deg, var(--oro-brillante), var(--oro-antiguo), var(--oro-sombra)) 1;
+  position: absolute; right: 0; top: 100%; min-width: 17rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.85);
+  z-index: 50;
+}
+.cab-grupo ul li {
+  border-bottom: 1px dotted rgba(203, 161, 53, 0.3);
+  padding-bottom: 0.25rem;
+  color: var(--papel-claro);
+  font-style: italic;
+}
+.cab-grupo ul li::before { content: "✦ "; color: var(--oro); font-style: normal; }
+
+/* ==========================================================================
+   PORTADA: HILOS DEL DESTINO (Las Parcas y el Tenebrismo)
+   ========================================================================== */
+.inicio {
+  height: 250svh;
+  position: relative;
+  background: radial-gradient(circle at 50% 40%, rgba(70, 20, 15, 0.3) 0%, rgba(12, 7, 4, 0.95) 80%);
+}
+
+.escena {
+  position: sticky; top: var(--hh);
+  height: calc(100svh - var(--hh));
+  overflow: hidden;
+  display: grid; place-items: center;
+}
+
+#hilos {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 2;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+}
+#hilos polyline {
+  fill: none; stroke-linecap: round; vector-effect: non-scaling-stroke;
+}
+
+.titulo-link {
+  position: relative; z-index: 3;
+  text-align: center; text-decoration: none;
+  padding: 2.5rem 2rem; display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  max-width: 60rem;
+}
+.titulo-link:hover { transform: scale(1.025); }
+
+/* Cartela barroca grabada */
+.titulo-link::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(30, 16, 10, 0.85) 0%, rgba(15, 8, 4, 0.3) 70%, transparent 100%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(8px);
+}
+
+.titulo-link .adorno-sup,
+.titulo-link .adorno-inf {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--oro);
+  letter-spacing: 0.25em;
+  opacity: 0.85;
+}
+
+.titulo-link h1 {
+  font-size: clamp(2.8rem, 8.5vw, 6.2rem);
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--oro-brillante);
+  background: linear-gradient(180deg, #fff2be 0%, #e5be5a 45%, #9b7218 80%, #573a06 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.2rem 0;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9);
+  line-height: 1.05;
+}
+
+.titulo-link span.subtitulo {
+  display: block; margin-top: 1rem;
+  font-style: italic; font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+  color: #dfcaa2;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.aviso {
+  position: absolute; bottom: 2rem; left: 0; right: 0;
+  text-align: center; z-index: 4;
+  font-style: italic; margin: 0;
+  color: var(--oro);
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  transition: opacity 0.4s;
+}
+.aviso::before { content: "↓ "; font-style: normal; }
+.aviso::after { content: " ↓"; font-style: normal; }
+
+/* ==========================================================================
+   CUENTA ATRÁS: RELOJ ASTRONÓMICO / MEMENTO MORI
+   ========================================================================== */
+.reloj-sec {
+  background: radial-gradient(circle at 50% 30%, #1f1009 0%, #0d0604 100%);
+  color: #f7e6c4;
+  padding: 5rem 0 6rem;
+  text-align: center;
+  border-block: 4px double var(--oro);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.9);
+  position: relative;
+}
+
+.reloj-sec::before {
+  content: "OMNES VULNERANT, ULTIMA NECAT";
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  color: var(--oro-antiguo);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.reloj-sec h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--oro-brillante);
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+/* Caja de bronce y hierro labrado */
+.reloj {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 1.6rem 2.2rem;
+  background: linear-gradient(180deg, #180e09 0%, #0c0704 100%);
+  border: 4px solid #8c671a;
+  border-image: linear-gradient(135deg, #f4d368, #8c671a 30%, #3e2607 70%, #d8af3a) 1;
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.9),
+    inset 0 0 35px rgba(0, 0, 0, 0.95),
+    inset 0 0 0 2px rgba(255, 230, 150, 0.2);
+  position: relative;
+}
+
+.reloj div {
+  min-width: 4rem;
+  background: radial-gradient(circle at 50% 30%, #2a160c 0%, #120905 100%);
+  padding: 0.8rem 0.6rem;
+  border: 1px solid rgba(203, 161, 53, 0.35);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.reloj b {
+  display: block;
+  font: 700 clamp(2.4rem, 8vw, 4.4rem)/1 var(--serif);
+  color: var(--oro-brillante);
+  text-shadow: 0 0 12px rgba(244, 211, 104, 0.6), 0 2px 4px #000;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+.reloj small {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #cfbe9e;
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+}
+
+.reloj i {
+  font: 700 clamp(2rem, 6vw, 3.5rem)/1 var(--serif);
+  color: var(--oro);
+  font-style: normal;
+  text-shadow: 0 0 10px rgba(203, 161, 53, 0.5);
+  margin-inline: -0.1rem;
+}
+
+.reloj-nota {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: var(--oro);
+  font-size: 1.15rem;
+}
+
+.hueco {
+  margin: 3rem auto 0;
+  width: min(100%, 46rem);
+  aspect-ratio: 16 / 9;
+  display: grid; place-items: center;
+  background: radial-gradient(circle, #1a0f0a 0%, #080402 100%);
+  border: 2px solid var(--oro-antiguo);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,0,0,0.9);
+  color: #cfbe9e;
+  padding: 1.5rem;
+  position: relative;
+}
+.hueco::before {
+  content: "✦ PROYECCIÓN CINEMATOGRÁFICA ✦";
+  position: absolute; top: -0.9rem;
+  background: #080402; padding: 0 1rem;
+  color: var(--oro); font-size: 0.8rem; letter-spacing: 0.2em;
+}
+.hueco video { width: 100%; height: 100%; object-fit: cover; }
+
+/* ==========================================================================
+   ÍNDICE: LOS CORDONES DE LAS PARCAS (Pasamanería y rotura física)
+   ========================================================================== */
+.indice {
+  padding: 5.5rem 0 6rem;
+  background: 
+    radial-gradient(ellipse at 50% 0%, rgba(203, 161, 53, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #100805 0%, #170d08 50%, #100805 100%);
+  color: #ffffff;
+  border-bottom: 2px solid #3d2311;
+  position: relative;
+}
+
+.indice .floron {
+  color: #ffffff;
+}
+
+.indice h2 {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 0.3em;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+}
+
+.indice .intro-indice {
+  text-align: center;
+  max-width: 58ch;
+  margin: 0 auto 3.5rem;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 1.15rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.hilos {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.8rem;
+}
+
+.hilo a {
+  display: block; text-decoration: none;
+  padding: 0.6rem 1rem;
+  background: rgba(18, 10, 6, 0.45);
+  border: 1px solid rgba(203, 161, 53, 0.15);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hilo a:hover {
+  background: rgba(35, 18, 10, 0.7);
+  border-color: rgba(203, 161, 53, 0.4);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.hilo .et {
+  display: flex; align-items: baseline; justify-content: space-between;
+  font-size: 1.45rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+.hilo a:hover .et {
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  transform: translateX(4px);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 2px 6px rgba(0,0,0,0.9);
+}
+.hilo .et small {
+  font-size: 0.95rem; font-style: italic;
+  color: #ffffff;
+  opacity: 0.9;
+  letter-spacing: normal;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+.linea {
+  display: flex; align-items: center; color: var(--c);
+  position: relative; height: 3rem;
+}
+
+/* Cuerdas de seda trenzada */
+.tramo {
+  height: 6px;
+  background: repeating-linear-gradient(
+    115deg,
+    var(--c) 0px,
+    var(--c) 5px,
+    rgba(255, 235, 175, 0.6) 6px,
+    var(--c-oscuro) 7px,
+    var(--c-oscuro) 10px
+  );
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255,255,255,0.4);
+  transition: transform 0.65s cubic-bezier(0.3, 1.6, 0.4, 1), opacity 0.65s, height 0.3s;
+  border-radius: 3px;
+}
+.tramo.i { flex: 0 0 24%; transform-origin: 100% 50%; }
+.tramo.d { flex: 1; transform-origin: 0% 50%; }
+.hilo a:hover .tramo { height: 8px; filter: brightness(1.2); }
+
+/* Nudo salomónico labrado */
+.nudo {
+  width: 3.2rem; height: 3.2rem; flex: none;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
+  transition: transform 0.65s ease, opacity 0.5s;
+  margin-inline: -4px;
+}
+
+/* Animación de rotura del hilo del destino */
+.hilo.roto .tramo.i {
+  transform: translateX(-2.5rem) rotate(-14deg);
+  opacity: 0.4;
+  clip-path: polygon(0 0, 100% 20%, 82% 50%, 100% 80%, 0 100%);
+}
+.hilo.roto .tramo.d {
+  transform: translateX(2.5rem) rotate(12deg);
+  opacity: 0.4;
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%, 18% 50%);
+}
+.hilo.roto .nudo {
+  transform: translateY(2.5rem) rotate(60deg) scale(0.7);
+  opacity: 0;
+}
+
+.c-rojo   { --c: #b82329; --c-oscuro: #500b0e; }
+.c-oro    { --c: #d8af3a; --c-oscuro: #664f10; }
+.c-morado { --c: #205493; --c-oscuro: #0f2747; }
+.c-azul   { --c: #b85d26; --c-oscuro: #5c2b0d; }
+.c-gris   { --c: #941e3a; --c-oscuro: #4a0b1a; }
+
+/* ==========================================================================
+   SECCIONES GENERALES & BANDAS DE CORNISA
+   ========================================================================== */
+.seccion {
+  scroll-margin-top: var(--hh);
+  padding-bottom: 6rem;
+  position: relative;
+}
+
+.banda {
+  padding: 1.8rem 0;
+  margin-bottom: 3.5rem;
+  border-block: 2px solid var(--oro);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  position: relative;
+}
+
+.banda .cont {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 0.8rem 1.5rem;
+}
+
+.banda h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5.5vw, 2.9rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.volver {
+  font-size: 1rem;
+  padding: 0.5rem 1.4rem;
+  border: 1px solid var(--oro);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--oro-brillante);
+  text-decoration: none;
+  font-style: italic;
+  transition: all 0.25s ease;
+  letter-spacing: 0.04em;
+}
+.volver:hover {
+  background: var(--oro);
+  color: #120905;
+  box-shadow: 0 0 15px rgba(203, 161, 53, 0.6);
+}
+
+.b-rojo {
+  background: linear-gradient(180deg, #46090e 0%, #290407 100%);
+  color: #f7e6c4;
+}
+.b-oro {
+  background: linear-gradient(180deg, #443210 0%, #241804 100%);
+  color: #fff2be;
+}
+.b-morado {
+  background: linear-gradient(180deg, #11284a 0%, #081426 100%);
+  color: #d6e8ff;
+}
+.b-azul {
+  background: linear-gradient(180deg, #542910 0%, #291206 100%);
+  color: #fed9be;
+}
+.b-gris {
+  background: linear-gradient(180deg, #470d1b 0%, #24040b 100%);
+  color: #fedbe3;
+}
+
+/* ==========================================================================
+   SINOPSIS: EL TOMO ANTIGUO (El Libro de Cuero y Pan de Oro)
+   ========================================================================== */
+.libro-wrap {
+  display: grid; place-items: center;
+  perspective: 1600px;
+  margin-top: 1rem;
+}
+
+/* Cubierta encuadernada en marroquinería y gofrado dorado */
+.tapa {
+  width: min(85vw, 22rem);
+  aspect-ratio: 1 / 1.42;
+  border: 0;
+  border-radius: 4px 14px 14px 4px;
+  padding: 2.4rem 1.8rem;
+  color: #f4d368;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(244, 211, 104, 0.12) 0%, transparent 60%),
+    linear-gradient(90deg, #1b0709 0%, #3a0d12 4%, #6e151d 12%, #420d13 88%, #200609 100%);
+  box-shadow:
+    inset 16px 0 20px rgba(0, 0, 0, 0.8),
+    inset -4px 0 10px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 5px #7a5416,
+    inset 0 0 0 8px #2b080c,
+    inset 0 0 0 11px rgba(244, 211, 104, 0.6),
+    16px 20px 45px rgba(0, 0, 0, 0.85);
+  display: flex; flex-direction: column;
+  justify-content: space-between; align-items: center;
+  transform-origin: 0% 50%;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.35, 1), box-shadow 0.4s ease;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.tapa:hover {
+  transform: rotateY(-14deg) translateY(-6px);
+  box-shadow:
+    inset 16px 0 20px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 5px #a37320,
+    inset 0 0 0 11px rgba(244, 211, 104, 0.9),
+    22px 28px 55px rgba(0, 0, 0, 0.95);
+}
+
+/* Nervios del lomo */
+.tapa::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: 22px;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 35px,
+    rgba(0, 0, 0, 0.7) 36px,
+    rgba(244, 211, 104, 0.4) 38px,
+    rgba(0, 0, 0, 0.8) 40px
+  );
+  border-right: 2px solid rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+/* Cantoneras de bronce y lazo de seda */
+.tapa::after {
+  content: "";
+  position: absolute; bottom: -20px; right: 28px;
+  width: 18px; height: 45px;
+  background: linear-gradient(180deg, var(--carmesin-vivo) 0%, #3e070a 100%);
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.7);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  pointer-events: none;
+}
+
+.tapa-cartela {
+  border: 1px solid rgba(244, 211, 104, 0.5);
+  padding: 1.2rem 1rem;
+  background: rgba(20, 4, 6, 0.45);
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.7);
+  width: 100%;
+}
+
+.tapa b {
+  display: block;
+  font-size: clamp(1.8rem, 5vw, 2.3rem);
+  line-height: 1.15;
+  color: var(--oro-brillante);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px #000, 0 0 15px rgba(244, 211, 104, 0.5);
+}
+
+.tapa .latin {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--oro);
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+.tapa small {
+  font-size: 1rem;
+  font-style: italic;
+  color: #e5ce9e;
+  line-height: 1.4;
+  margin-top: 0.8rem;
+  display: block;
+}
+
+.tapa.abre {
+  transform: rotateY(-140deg) scale(0.9);
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s;
+}
+
+/* ==========================================================================
+   EL VOLUMEN ABIERTO (Doble página de pergamino in-folio)
+   ========================================================================== */
+.abierto {
+  display: none;
+  position: relative;
+  width: min(100%, 64rem);
+  background: 
+    radial-gradient(ellipse at 50% 50%, #fbf5e6 0%, #f0e2c3 60%, #e0ce9f 100%);
+  color: var(--tinta);
+  border: 8px solid #2e1007;
+  border-image: linear-gradient(135deg, #78550d, #2e1007 30%, #a8812a 70%, #1a0803) 8;
+  border-radius: 4px;
+  padding: 3rem 2.8rem 2.2rem;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.9),
+    inset 0 0 80px rgba(138, 99, 50, 0.35);
+  animation: desplegarLibro 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.abierto.on { display: block; }
+
+@keyframes desplegarLibro {
+  from { opacity: 0; transform: scale(0.9) rotateX(12deg); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Pliegue central y sombra de encuadernación */
+.abierto::before {
+  content: "";
+  position: absolute; top: 0; bottom: 0; left: 50%; width: 50px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(60, 35, 12, 0.15) 30%,
+    rgba(40, 20, 5, 0.45) 50%,
+    rgba(60, 35, 12, 0.15) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Cabecera del libro */
+.libro-header {
+  text-align: center;
+  border-bottom: 2px solid rgba(138, 99, 50, 0.4);
+  padding-bottom: 1.2rem;
+  margin-bottom: 2.2rem;
+  position: relative;
+}
+.libro-header .tomo-meta {
+  font-size: 0.9rem; letter-spacing: 0.3em;
+  color: var(--carmesin); text-transform: uppercase;
+  font-weight: bold;
+}
+.libro-header h3 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: var(--carmesin-oscuro);
+  letter-spacing: 0.05em;
+  margin: 0.2rem 0;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+}
+.libro-header .lema {
+  font-style: italic; color: var(--tinta-sepia); font-size: 1.15rem;
+}
+
+/* Columnas de lectura */
+.paginas {
+  line-height: 1.85;
+}
+.paginas p {
+  text-align: justify;
+  hyphens: auto;
+  margin-bottom: 1.4rem;
+  color: var(--tinta);
+}
+
+/* Letra capitular ornamentada (Drop Cap) */
+.capitular {
+  float: left;
+  font-size: 4.8rem;
+  line-height: 0.78;
+  padding: 0.4rem 0.6rem 0.1rem 0;
+  color: var(--carmesin);
+  font-family: var(--serif);
+  font-weight: bold;
+  text-shadow: 2px 2px 0 rgba(203, 161, 53, 0.4), 0 0 12px rgba(122, 21, 27, 0.25);
+}
+
+.paginas h4 {
+  margin: 1.8rem 0 0.4rem;
+  font-size: 1.35rem;
+  color: var(--carmesin);
+  border-bottom: 1px dotted rgba(138, 99, 50, 0.5);
+  padding-bottom: 0.2rem;
+  letter-spacing: 0.04em;
+}
+
+.cerrar {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  margin: 2rem 0 0 auto;
+  padding: 0.6rem 1.6rem;
+  background: linear-gradient(180deg, var(--carmesin) 0%, var(--carmesin-oscuro) 100%);
+  color: var(--oro-brillante);
+  border: 1px solid var(--oro);
+  border-radius: 2px;
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+  float: right;
+}
+.cerrar:hover {
+  background: var(--carmesin-vivo);
+  box-shadow: 0 6px 18px rgba(122, 21, 27, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   TEOLOGÍA: RETABLO DE LAS TROMPETAS
+   ========================================================================== */
+.panel-oro {
+  background: radial-gradient(ellipse at 50% 20%, #291807 0%, #140b03 100%);
+  border: 3px solid var(--oro);
+  border-image: linear-gradient(135deg, var(--oro-brillante), var(--oro-antiguo) 40%, #462c05 80%, var(--oro-brillante)) 1;
+  padding: 2.4rem 1.6rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9), inset 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+.trompetas {
+  display: grid; gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.trompeta {
+  background: rgba(10, 5, 2, 0.6);
+  border: 1px solid var(--oro-antiguo);
+  padding: 1.2rem 1rem;
+  text-align: center;
+  color: var(--papel-claro);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.trompeta::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle, rgba(244, 211, 104, 0.15) 0%, transparent 70%);
+  opacity: 0; transition: opacity 0.35s;
+}
+.trompeta:hover,
+.trompeta[aria-expanded="true"] {
+  background: rgba(45, 26, 8, 0.85);
+  border-color: var(--oro-brillante);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(244, 211, 104, 0.25);
+}
+.trompeta:hover::before,
+.trompeta[aria-expanded="true"]::before { opacity: 1; }
+
+.trompeta svg {
+  width: min(100%, 15rem);
+  height: auto;
+  margin: 0 auto 0.8rem;
+  transform: rotate(-6deg);
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
+}
+.trompeta:hover svg,
+.trompeta[aria-expanded="true"] svg {
+  transform: rotate(-12deg) scale(1.08);
+}
+
+.trompeta b {
+  display: block;
+  font-size: 1.45rem;
+  color: var(--oro-brillante);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tema {
+  display: none;
+  margin-top: 1.5rem;
+  padding: 2.2rem 2.4rem;
+  background: var(--papel-claro);
+  color: var(--tinta);
+  border-left: 8px solid var(--oro);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(138, 99, 50, 0.15);
+  animation: desplegarLibro 0.5s ease both;
+}
+.tema.on { display: block; }
+
+.tema h3 {
+  font-size: 1.85rem;
+  color: var(--carmesin-oscuro);
+  border-bottom: 2px solid rgba(138, 99, 50, 0.3);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.tema ul { padding-left: 1.4rem; margin: 0; }
+.tema li {
+  margin-bottom: 0.9rem;
+  line-height: 1.8;
+}
+.tema li strong { color: var(--carmesin-oscuro); }
+
+/* ==========================================================================
+   INTELIGENCIA ARTIFICIAL: EL PERGAMINO DE VIRGILIO
+   ========================================================================== */
+.s-ia {
+  background: radial-gradient(circle at 50% 20%, #0d213d 0%, #040a14 100%);
+  color: #f1e8d0;
+}
+
+.pergamino {
+  position: relative;
+  width: min(100%, 50rem);
+  margin: 2.5rem auto 0;
+  padding: 3.2rem 0;
+}
+
+/* Varillas de madera noble torneada con remates de latón */
+.pergamino::before, .pergamino::after {
+  content: "";
+  position: absolute; left: -1.2rem; right: -1.2rem;
+  height: 2.4rem;
+  border-radius: 1.2rem;
+  background: linear-gradient(180deg, #5c3b16 0%, #a8793b 30%, #ffd984 50%, #7d4e1a 75%, #3d240a 100%);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.9),
+    inset 0 2px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8);
+  z-index: 3;
+}
+.pergamino::before { top: 0; }
+.pergamino::after { bottom: 0; }
+
+.hoja {
+  background: 
+    radial-gradient(ellipse at 50% 30%, #f7ecd2 0%, #ecd7ad 60%, #ceb27c 100%);
+  color: var(--tinta);
+  padding: 2.4rem 2.2rem;
+  margin: 0 0.8rem;
+  box-shadow: 
+    inset 0 0 45px rgba(120, 80, 30, 0.5),
+    0 15px 35px rgba(0, 0, 0, 0.8);
+  border-inline: 1px solid rgba(120, 80, 30, 0.4);
+}
+
+.hoja h3 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #1b4578;
+  border-bottom: 1px dotted rgba(27, 69, 120, 0.4);
+  padding-bottom: 0.5rem;
+}
+
+#registro {
+  max-height: 22rem;
+  overflow-y: auto;
+  display: grid; gap: 1rem;
+  padding: 0.6rem 0.6rem 1rem;
+}
+
+.msg {
+  padding: 0.8rem 1.2rem;
+  border-radius: 3px;
+  max-width: 86%;
+  line-height: 1.65;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.msg.tu {
+  justify-self: end;
+  background: rgba(27, 69, 120, 0.12);
+  border: 1px solid rgba(27, 69, 120, 0.4);
+  color: #0f2747;
+}
+.msg.vir {
+  justify-self: start;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(138, 99, 50, 0.45);
+  color: var(--tinta);
+}
+.msg em {
+  display: block; text-align: right;
+  margin-top: 0.4rem; font-weight: bold;
+  color: #1b4578; font-size: 0.85rem;
+}
+
+.chips {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin: 1.2rem 0;
+}
+.chips button {
+  font-size: 0.95rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #1b4578;
+  background: rgba(255, 255, 255, 0.4);
+  color: #1b4578;
+  font-style: italic;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+.chips button:hover {
+  background: #1b4578;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(27, 69, 120, 0.35);
+}
+
+.pregunta { display: flex; gap: 0.6rem; margin-top: 0.8rem; }
+.pregunta input {
+  flex: 1; min-width: 0;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  border: 2px solid var(--tinta-sepia);
+  background: #fffdf7;
+  color: var(--tinta);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+.pregunta input:focus {
+  outline: none;
+  border-color: #1b4578;
+  box-shadow: 0 0 10px rgba(27, 69, 120, 0.3);
+}
+
+.pregunta button {
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(180deg, #1b4578 0%, #0c2340 100%);
+  color: var(--oro-brillante);
+  border: 1px solid var(--oro-antiguo);
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
+}
+.pregunta button:hover {
+  background: #235796;
+  box-shadow: 0 4px 15px rgba(27, 69, 120, 0.5);
+}
+
+/* ==========================================================================
+   SONORIZACIÓN: LA ESTACIÓN DEL BUNKER (El Contraste Paródico)
+   ========================================================================== */
+.marco-bunker {
+  background: #140b06;
+  border: 6px ridge #b85d26;
+  padding: 1.2rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9), inset 0 0 25px rgba(184, 93, 38, 0.15);
+}
+
+.cutre {
+  all: initial;
+  display: block; box-sizing: border-box;
+  font-family: "Courier New", monospace;
+  color: #ff0;
+  background: #000050 repeating-linear-gradient(45deg, #000050 0 12px, #00003b 12px 24px);
+  border: 6px ridge #b88a1e;
+  padding: 1.2rem;
+  line-height: 1.5; font-size: 1.05rem;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.9);
+}
+.cutre * { box-sizing: border-box; font-family: inherit; }
+.cutre h3 {
+  color: #0ff; font-size: 1.7rem; text-align: center;
+  margin: 0.4rem 0; text-decoration: underline wavy #f0f;
+}
+.cutre p { color: #fff; max-width: none; margin: 0 0 0.8rem; }
+.cutre .marq {
+  overflow: hidden; white-space: nowrap;
+  background: #900; color: #ff0; font-weight: bold;
+  border: 2px dashed #ff0; margin-bottom: 1rem; padding: 0.3rem 0;
+}
+.cutre .marq span {
+  display: inline-block; padding-left: 100%;
+  animation: marq 15s linear infinite;
+}
+@keyframes marq { to { transform: translateX(-100%); } }
+
+.cutre .parp { animation: parp 1s steps(2, jump-none) infinite; }
+@keyframes parp { 50% { opacity: 0.2; } }
+
+.cutre .rej { display: grid; gap: 1rem; }
+.cutre .caja {
+  border: 3px outset #c0c0c0;
+  background: #000035;
+  padding: 0.8rem;
+}
+.cutre .caja h4 { margin: 0 0 0.5rem; color: #ff0; font-size: 1.2rem; }
+.cutre figure { margin: 0; text-align: center; }
+.cutre figcaption { color: #0ff; font-size: 0.85rem; margin-top: 0.4rem; }
+.cutre svg {
+  width: min(100%, 13rem);
+  border: 4px groove #fff;
+  image-rendering: pixelated;
+  margin: 0 auto;
+}
+.cutre .com {
+  background: #000; border: 1px solid #0f0;
+  color: #0f0; padding: 0.5rem; margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+.cutre .com b { color: #ff0; }
+.cutre .cont-v {
+  display: inline-block; background: #000; color: #0f0;
+  font-family: "Courier New", monospace;
+  padding: 0.15rem 0.6rem; border: 2px inset #fff;
+}
+.cutre .vid {
+  aspect-ratio: 16 / 9;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; border: 3px dotted #f0f;
+  color: #fff; padding: 0.8rem;
+}
+.cutre .vid iframe, .cutre .vid video { width: 100%; height: 100%; border: 0; }
+
+/* ==========================================================================
+   EDICIÓN: PINACOTECA DE CUADROS BARROCOS (Marcos de Oro Moldurado)
+   ========================================================================== */
+.s-ed {
+  background: radial-gradient(circle at 50% 30%, #280a13 0%, #0d0306 100%);
+  color: #eee;
+}
+
+.cuadros { display: grid; gap: 4rem; justify-items: center; }
+.cuadro { width: min(100%, 48rem); margin: 0; }
+
+/* Marco de galería labrado al óleo */
+.marco {
+  border: 20px solid;
+  border-image: linear-gradient(
+    135deg,
+    #f8e59e 0%,
+    #c49727 20%,
+    #533705 45%,
+    #fae392 50%,
+    #694709 75%,
+    #be9023 100%
+  ) 20;
+  background: #19060b;
+  padding: 1.4rem;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.95),
+    inset 0 0 30px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.placa {
+  width: max-content; max-width: 90%;
+  margin: 1.4rem auto 0;
+  padding: 0.4rem 1.8rem;
+  background: linear-gradient(180deg, #f0ca65 0%, #aa801e 50%, #684807 100%);
+  color: #120902;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 235, 175, 0.5);
+}
+
+.mb-btn {
+  display: block; width: 100%;
+  padding: 0; border: 0; background: none;
+  position: relative; transition: filter 0.3s;
+}
+.mb-btn:hover { filter: brightness(1.1); }
+.mb-btn .lupa {
+  position: absolute; right: 0.8rem; bottom: 0.8rem;
+  background: rgba(18, 9, 3, 0.85);
+  color: var(--oro-brillante);
+  border: 1px solid var(--oro);
+  padding: 0.4rem 1rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.tablero {
+  position: relative; width: 100%; aspect-ratio: 4 / 3;
+  background: #180e07;
+  overflow: hidden;
+}
+.tablero img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.mosaico {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 0.4rem; width: 100%; height: 100%;
+  padding: 0.4rem; color: #fff;
+  font-size: clamp(0.75rem, 2.5vw, 1.05rem);
+}
+.mosaico span {
+  display: grid; place-items: center;
+  text-align: center; padding: 0.4rem;
+  font-style: italic; letter-spacing: 0.04em;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+}
+.mosaico span:nth-child(1) { background: #16243a; grid-row: span 2; }
+.mosaico span:nth-child(2) { background: #5c110d; }
+.mosaico span:nth-child(3) { background: #26211d; }
+.mosaico span:nth-child(4) { background: #3b1757; grid-column: span 2; }
+.mosaico span:nth-child(5) { background: #5a4005; grid-column: span 2; }
+.mosaico span:nth-child(6) { background: #113e73; }
+
+.pantalla {
+  aspect-ratio: 16 / 9;
+  background: #080402;
+  display: grid; place-items: center;
+  text-align: center; color: var(--papel-claro);
+  padding: 1.5rem;
+  font-style: italic;
+}
+.pantalla video, .pantalla iframe { width: 100%; height: 100%; border: 0; }
+
+dialog {
+  width: min(96vw, 72rem);
+  max-height: 94vh;
+  padding: 0;
+  border: 6px solid var(--oro);
+  background: #150d08;
+  color: #eee;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95);
+}
+dialog::backdrop { background: rgba(0, 0, 0, 0.9); }
+
+.barra {
+  display: flex; flex-wrap: wrap; gap: 0.8rem;
+  align-items: center; justify-content: space-between;
+  padding: 0.8rem 1.2rem;
+  background: #24160e;
+  border-bottom: 2px solid var(--oro-antiguo);
+}
+.barra h3 { margin: 0; font-size: 1.2rem; color: var(--oro-brillante); }
+.barra button {
+  padding: 0.4rem 1.1rem;
+  background: linear-gradient(180deg, var(--oro-brillante) 0%, var(--oro-antiguo) 100%);
+  color: #1a0b02;
+  border: 1px solid #fff;
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+.barra button:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 10px rgba(244, 211, 104, 0.5);
+}
+
+.lienzo {
+  overflow: auto; max-height: calc(94vh - 6rem);
+  padding: 1.5rem;
+}
+.lienzo .tablero { width: 100%; margin: auto; transition: width 0.4s ease; }
+.lienzo.zoom .tablero { width: 220%; }
+
+/* Puntos de análisis: Alfiler con gema y destello */
+.punto {
+  position: absolute; width: 2.2rem; height: 2.2rem;
+  margin: -1.1rem 0 0 -1.1rem;
+  border-radius: 50%;
+  border: 2px solid var(--oro-brillante);
+  background: radial-gradient(circle at 35% 30%, #ff524a 0%, #b81b1b 50%, #4a0303 100%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.8), 0 0 15px rgba(244, 211, 104, 0.5);
+  animation: latidoBarroco 2.8s infinite;
+  transition: transform 0.25s;
+}
+.punto:hover, .punto:focus-visible, .punto[aria-expanded="true"] {
+  transform: scale(1.3); z-index: 10;
+}
+
+@keyframes latidoBarroco {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 40, 40, 0.7); }
+  60% { box-shadow: 0 0 0 16px rgba(220, 40, 40, 0); }
+}
+
+.tip {
+  display: none; position: absolute;
+  left: 50%; top: 2.6rem; transform: translateX(-50%);
+  width: 17rem; max-width: 75vw;
+  text-align: left;
+  background: #1c1109;
+  color: var(--papel-claro);
+  border: 2px solid var(--oro);
+  padding: 0.9rem 1.1rem;
+  font-size: 0.95rem; line-height: 1.5;
+  z-index: 12;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+  cursor: default;
+}
+.punto.izq .tip { left: auto; right: -0.6rem; transform: none; }
+.punto.der .tip { left: -0.6rem; transform: none; }
+.punto:hover .tip, .punto:focus-visible .tip, .punto[aria-expanded="true"] .tip { display: block; }
+.tip b {
+  display: block; color: var(--oro-brillante);
+  margin-bottom: 0.3rem; font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA (Colofón de Imprenta Antigua)
+   ========================================================================== */
+.pie {
+  background: #0a0503;
+  color: #dfcaa2;
+  padding: 4rem 0 3.5rem;
+  text-align: center;
+  border-top: 3px double var(--oro);
+  position: relative;
+}
+
+.pie .floron-pie {
+  font-size: 2rem; color: var(--oro);
+  margin-bottom: 1rem;
+}
+
+.pie p { margin-inline: auto; font-size: 1.05rem; }
+.pie ul {
+  list-style: none; padding: 0;
+  margin: 1.5rem auto;
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 0.5rem 1.5rem;
+  max-width: 48rem;
+}
+.pie ul li { font-style: italic; color: var(--papel-claro); }
+.pie ul li::before { content: "❧ "; color: var(--oro-antiguo); font-style: normal; }
+
+.pie a.subir {
+  display: inline-block;
+  margin-top: 1.2rem;
+  color: var(--oro-brillante);
+  text-decoration: none;
+  font-style: italic;
+  border-bottom: 1px dotted var(--oro);
+  padding-bottom: 0.1rem;
+  transition: all 0.25s ease;
+}
+.pie a.subir:hover { color: #fff; border-bottom-style: solid; }
+
+/* ==========================================================================
+   ADAPTABILIDAD RESPONSIVA
+   ========================================================================== */
+@media (min-width: 720px) {
+  .trompetas { grid-template-columns: repeat(3, 1fr); }
+  .cutre .rej { grid-template-columns: 1.4fr 1fr; }
+  .cab-grupo ul { left: auto; width: min(26rem, 90vw); }
+  .paginas {
+    column-count: 2;
+    column-gap: 3.5rem;
+    column-rule: 1px solid rgba(138, 99, 50, 0.3);
+  }
+  .abierto { padding: 3.5rem 3.5rem 2.8rem; }
+  .hilos { gap: 2rem; }
+}
+
+@media (min-width: 1000px) {
+  .hilos { max-width: 48rem; margin-inline: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="salto" href="#indice">Saltar al índice de hilos</a>
+
+<!-- CABECERA DEL GRUPO -->
+<header class="cab-grupo">
+  <div class="fila">
+    <div class="marca">
+      <span class="sello" aria-hidden="true">UFV</span>
+      <p>
+        <strong>Grupo 1 · Proyecto Transversal</strong><br>
+        3º Comunicación Audiovisual · Universidad Francisco de Vitoria
+      </p>
+    </div>
+    <details>
+      <summary>Integrantes del grupo (7)</summary>
+      <ul>
+        <li>Marina Charlo Novillo</li>
+        <li>Adrián Romero</li>
+        <li>Gonzalo Lorite</li>
+        <li>Eduardo Nieto</li>
+        <li>Salvador Permuy</li>
+        <li>Moira del Corro</li>
+        <li>Lucas Espejo</li>
+      </ul>
+    </details>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- INICIO: LAS PARCAS Y EL HILO DEL DESTINO -->
+  <section class="inicio" id="portada" aria-label="Portada">
+    <div class="escena">
+      <svg id="hilos" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <a class="titulo-link" id="titulo" href="#corto">
+        <span class="adorno-sup">❦ · ✦ · ❦</span>
+        <h1>Lo que muere dentro</h1>
+        <span class="subtitulo">Mediometraje dramático del Grupo 1 · Pulsa el título</span>
+        <span class="adorno-inf">❦ · ✦ · ❦</span>
+      </a>
+      <p class="aviso" id="aviso">Desliza hacia abajo para tensar y cortar los hilos</p>
+    </div>
+  </section>
+
+  <!-- CUENTA ATRÁS: RELOJ MEMENTO MORI -->
+  <section class="reloj-sec seccion" id="corto" aria-labelledby="t-corto">
+    <div class="cont">
+      <h2 id="t-corto">El mediometraje llega en</h2>
+      <div class="reloj" role="timer" aria-label="Cuenta atrás para el estreno">
+        <div><b id="r-d">00</b><small>días</small></div><i>:</i>
+        <div><b id="r-h">00</b><small>horas</small></div><i>:</i>
+        <div><b id="r-m">00</b><small>min</small></div><i>:</i>
+        <div><b id="r-s">00</b><small>seg</small></div>
+      </div>
+      <p class="reloj-nota" id="r-nota"></p>
+      
+      <!-- CONTENEDOR DEL CORTO -->
+      <div class="hueco" id="corto-video">
+        <p style="margin:0">El mediometraje aparecerá aquí una vez estrenado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÍNDICE DE HILOS -->
+  <section class="indice seccion" id="indice" aria-labelledby="t-indice">
+    <div class="cont">
+      <div class="floron">✦</div>
+      <h2 id="t-indice">Tira de un hilo</h2>
+      <p class="intro-indice">
+        Cada hilo de seda custodia un apartado de la producción. Al pulsarlo, el hilo se quebrará bajo la tijera de Átropos; cuando regreses, volverá a estar intacto.
+      </p>
+      <nav aria-label="Índice de apartados">
+        <ol class="hilos">
+          <li class="hilo c-rojo">
+            <a href="#sinopsis">
+              <span class="et">Sinopsis <small>El argumento y sus tres realidades</small></span>
+              <span class="linea">
+                <span class="tramo i"></span>
+                <svg class="nudo" viewBox="0 0 40 40" aria-hidden="true">
+                  <path d="M2 20C10 20 12 8 20 8c10 0 12 24 2 24-10 0-12-18-2-18 10 0 12 6 18 6" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+                <span class="tramo d"></span>
+              </span>
+            </a>
+          </li>
+          <li class="hilo c-oro">
+            <a href="#teologia">
+              <span class="et">Teología <small>Las trompetas y el Apocalipsis interior</small></span>
+              <span class="linea">
+                <span class="tramo i"></span>
+                <svg class="nudo" viewBox="0 0 40 40" aria-hidden="true">
+                  <path d="M2 20C10 20 12 8 20 8c10 0 12 24 2 24-10 0-12-18-2-18 10 0 12 6 18 6" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+                <span class="tramo d"></span>
+              </span>
+            </a>
+          </li>
+          <li class="hilo c-morado">
+            <a href="#ia">
+              <span class="et">Inteligencia Artificial <small>El pergamino del oráculo Virgilio</small></span>
+              <span class="linea">
+                <span class="tramo i"></span>
+                <svg class="nudo" viewBox="0 0 40 40" aria-hidden="true">
+                  <path d="M2 20C10 20 12 8 20 8c10 0 12 24 2 24-10 0-12-18-2-18 10 0 12 6 18 6" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+                <span class="tramo d"></span>
+              </span>
+            </a>
+          </li>
+          <li class="hilo c-azul">
+            <a href="#sonorizacion">
+              <span class="et">Sonorización <small>El podcast del búnker antes del fin</small></span>
+              <span class="linea">
+                <span class="tramo i"></span>
+                <svg class="nudo" viewBox="0 0 40 40" aria-hidden="true">
+                  <path d="M2 20C10 20 12 8 20 8c10 0 12 24 2 24-10 0-12-18-2-18 10 0 12 6 18 6" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+                <span class="tramo d"></span>
+              </span>
+            </a>
+          </li>
+          <li class="hilo c-gris">
+            <a href="#edicion">
+              <span class="et">Edición y Posproducción <small>Pinacoteca de moodboards y etalonaje</small></span>
+              <span class="linea">
+                <span class="tramo i"></span>
+                <svg class="nudo" viewBox="0 0 40 40" aria-hidden="true">
+                  <path d="M2 20C10 20 12 8 20 8c10 0 12 24 2 24-10 0-12-18-2-18 10 0 12 6 18 6" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+                <span class="tramo d"></span>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- SINOPSIS: EL TOMO ANTIGUO -->
+  <section class="seccion" id="sinopsis" aria-labelledby="t-sin" tabindex="-1">
+    <div class="banda b-rojo">
+      <div class="cont">
+        <h2 id="t-sin">Sinopsis</h2>
+        <a class="volver" href="#indice">← Volver al índice</a>
+      </div>
+    </div>
+    
+    <div class="cont libro-wrap">
+      <!-- CUBIERTA DEL LIBRO -->
+      <button class="tapa" id="tapa" aria-expanded="false" aria-controls="abierto">
+        <div class="tapa-cartela">
+          <span class="latin">LIBER PRIMUS · OPUS I</span>
+          <b>Lo que muere dentro</b>
+          <span class="latin">Mors et Fata · Apocalypsis Animi</span>
+        </div>
+        <small>Volumen encuadernado en cuero y pan de oro.<br>Púlsalo para abrir sus páginas.</small>
+      </button>
+
+      <!-- PÁGINAS INTERIORES DEL LIBRO ABIERTO -->
+      <article class="abierto" id="abierto" aria-label="Sinopsis completa del mediometraje">
+        <header class="libro-header">
+          <span class="tomo-meta">Transversal · 3º Comunicación Audiovisual · UFV</span>
+          <h3>Lo que muere dentro</h3>
+          <p class="lema">«No era el fin del mundo entero: era el fin de su mundo.»</p>
+        </header>
+
+        <div class="paginas">
+          <p><span class="capitular">U</span>n joven, Salva, recibe de su pareja la noticia de que mañana será el fin del mundo. Él dice que no lo cree. Pero nosotros no vemos el mundo como es: lo vemos a través de sus ojos. Hay gente corriendo, niños gritando, un ruido constante que no cesa. Él sigue diciendo que no se lo cree, pero lo que ve parece decir lo contrario.</p>
+
+          <p>Esa es la primera lectura, la que el espectador vive en carne propia durante buena parte del mediometraje. La segunda llega después y le da la vuelta a todo: lo que hemos vivido como signos del apocalipsis (el sonido intensificado, la alarma constante) son cosas completamente cotidianas. Lo único que cambiaba era la mirada con la que lo veíamos: la suya.</p>
+
+          <h4>El giro</h4>
+          <p>Salva recorre lugares que significan algo para él, y aunque cree que busca a Aurora desesperadamente, en realidad ya sabe dónde y cuándo va a verla. Está retrasando el momento. Cuando llega a «su lugar», un sitio apartado y silencioso, no encuentra ningún apocalipsis: encuentra a Aurora, que le dice con sencillez y sin crueldad que ya no le quiere. Le devuelve un colgante y le pide que no la busque. Nadie dijo nunca que el mundo se fuera a acabar. Salva tradujo una despedida en un apocalipsis.</p>
+
+          <h4>Las tres realidades</h4>
+          <p>Cada escena funciona en tres niveles. La realidad objetiva: tráfico, ruido normal de ciudad, gente con sus vidas. La paranoia de Salva: la misma ciudad interpretada desde el miedo, donde quien camina deprisa huye y una conversación cualquiera se vuelve una despedida. Y una tercera, también objetiva, donde las coincidencias reales se alinean de forma que ya no parece casualidad y dan cuerpo a la paranoia. El espectador duda, igual que Salva, de si es la cabeza de un chico roto o si el universo le habla.</p>
+
+          <h4>Estructura</h4>
+          <p>El corto se abre y se cierra con lo único sobrenatural: tres Parcas, fuera del tiempo, que sostienen un hilo y hablan de cortarlo. Sobre esa imagen entra la voz en off de Salva. Después, cinco etapas sentidas más que anunciadas: la advertencia, la alteración, la acumulación de señales, la revelación y la destrucción y transformación, cuando las Parcas cortan el hilo en el mismo instante en que todo se rompe para él. El mundo no ha terminado. El suyo, sí.</p>
+
+          <h4>Lo que queda</h4>
+          <p>El corto no dice que el amor sea una condena ni que una ruptura tenga que destruir a nadie. Toma en serio algo que todos hemos sentido: cuando algo importante se rompe, el mundo entero parece hablarnos de esa pérdida. Tras el corte del hilo, un último gesto pequeño y silencioso sugiere que hay algo después. La pregunta no es si el mundo ha terminado, sino qué puede nacer cuando el mundo que conocías deja de existir.</p>
+
+          <h4>Personajes</h4>
+          <p><strong>Salva (Salvador):</strong> Cinco años con Aurora; ella es su hogar y su realidad entera. Siempre parece dormido, cansado, como un extranjero. <strong>Aurora:</strong> Buena, paciente y firme: su decisión es un cierre definitivo. Antes llevaba un colgante con la inicial de Salva. <strong>Las tres Parcas</strong> (Cloto, Láquesis y Átropos): sin rostro, sin moral, solo ejecutan. <strong>El señor mayor:</strong> Inspirado en el Ángel Intérprete del Apocalipsis: habla con sinceridad de la muerte, y Salva lo recibe como una confirmación mística.</p>
+        </div>
+
+        <button class="cerrar" id="cerrar" type="button">❦ Cerrar el volumen</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- TEOLOGÍA: RETABLO DE LAS TROMPETAS -->
+  <section class="seccion" id="teologia" aria-labelledby="t-teo" tabindex="-1">
+    <div class="banda b-oro">
+      <div class="cont">
+        <h2 id="t-teo">Teología</h2>
+        <a class="volver" href="#indice">← Volver al índice</a>
+      </div>
+    </div>
+    <div class="cont">
+      <p style="text-align:center;margin-inline:auto;font-size:1.2rem;font-style:italic">
+        «Apocalipsis» procede del griego <em>apokálypsis</em>: la revelación, el acto solemne de descorrer el velo. En el mediometraje, al consumarse cada estación de Salva resuena un clarín alegórico. Haz resonar cada trompeta para desvelar el misterio.
+      </p>
+
+      <div class="panel-oro">
+        <div class="trompetas" role="group" aria-label="Temas de la teología">
+          <button class="trompeta" data-t="religion" aria-expanded="false" aria-controls="tema-religion">
+            <svg viewBox="0 0 220 90" aria-hidden="true"><use href="#svg-trompeta"/></svg>
+            <b>I. Religión</b>
+          </button>
+          <button class="trompeta" data-t="ficcion" aria-expanded="false" aria-controls="tema-ficcion">
+            <svg viewBox="0 0 220 90" aria-hidden="true"><use href="#svg-trompeta"/></svg>
+            <b>II. Ficción</b>
+          </button>
+          <button class="trompeta" data-t="psicologia" aria-expanded="false" aria-controls="tema-psicologia">
+            <svg viewBox="0 0 220 90" aria-hidden="true"><use href="#svg-trompeta"/></svg>
+            <b>III. Psicología</b>
+          </button>
+        </div>
+
+        <div class="tema" id="tema-religion">
+          <h3>La Revelación Sagrada</h3>
+          <ul>
+            <li><strong>Apocalipsis como revelación:</strong> El corto abraza el canon escriturístico: crisis, desvelamiento, separación, juicio y renacimiento. El juicio final irrumpe cuando Aurora pronuncia la verdad irrevocable.</li>
+            <li><strong>Las trompetas:</strong> Al término de cada tránsito suena una, reflejo de los ángeles del Apocalipsis: la verdad no derriba de golpe, sino que conquista el alma por estaciones.</li>
+            <li><strong>El señor mayor:</strong> Configurado a semejanza del Ángel Intérprete que instruye al profeta Juan, señalándole el peso de la muerte sin advertir que enciende la paranoia mística de Salva.</li>
+            <li><strong>Nombres providenciales:</strong> Salvador, quien anhela redimir a su amada y su cosmos; Aurora, el alba que rasga las tinieblas de la noche.</li>
+          </ul>
+        </div>
+
+        <div class="tema" id="tema-ficcion">
+          <h3>La Mitología y el Hilo</h3>
+          <ul>
+            <li><strong>Las tres Parcas:</strong> Cloto hila el destino, Láquesis mide su longitud y Átropos empuña las tijeras fatales. Criaturas atemporales, desprovistas de ira y compasión.</li>
+            <li><strong>El hilo que anuda la tragedia:</strong> Se manifiesta en el prólogo como advertencia y en el clímax como guillotina ontológica. Ellas son la arquitectura mítica; Aurora es el instrumento carnal.</li>
+            <li><strong>Las tres realidades superpuestas:</strong> La dimensión fáctica, la mirada febril de Salva y las sincronicidades que desafían la casualidad. Una dramaturgia de ambigüedad perpetua.</li>
+          </ul>
+        </div>
+
+        <div class="tema" id="tema-psicologia">
+          <h3>La Psique y el Abismo</h3>
+          <ul>
+            <li><strong>Jung y la individuación:</strong> El arquetipo del fin del mundo personifica el derrumbe de una conciencia cuyo eje se ha quebrado: la disolución de «Salva + Ella = Universo».</li>
+            <li><strong>La vigilia y el inconsciente:</strong> Aunque su intelecto repudia el desenlace, las honduras de su mente ya conocen la sentencia y la traducen al dialecto del cataclismo.</li>
+            <li><strong>La pulsión regresiva:</strong> El anhelo de detener las manecillas del tiempo en «su rincón secreto», demorando el encuentro que sellará su condena.</li>
+            <li><strong>La paranoia como refugio:</strong> El paso apresurado de los transeúntes se transmuta en desbandada general. El dolor de perder a la amada pesa tanto como la extinción de la especie.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTELIGENCIA ARTIFICIAL: EL PERGAMINO DE VIRGILIO -->
+  <section class="seccion s-ia" id="ia" aria-labelledby="t-ia" tabindex="-1">
+    <div class="banda b-morado">
+      <div class="cont">
+        <h2 id="t-ia">Inteligencia Artificial</h2>
+        <a class="volver" href="#indice">← Volver al índice</a>
+      </div>
+    </div>
+    <div class="cont">
+      <p style="margin-inline:auto;text-align:center;font-size:1.2rem;font-style:italic">
+        Interroga al oráculo sobre la génesis y simbología del mediometraje. El maestro Virgilio te conducirá por el averno de la historia.
+      </p>
+
+      <div class="pergamino">
+        <div class="hoja">
+          <h3>Pergamino de Virgilio</h3>
+          <div id="registro" role="log" aria-live="polite">
+            <div class="msg vir">
+              Salve, viajero. Soy Virgilio, tu guía en este purgatorio. Pregúntame sobre la desdicha de Salva, la determinación de Aurora, el misterio de las tres Parcas o la hermenéutica del corto.
+              <em>— Virgilio</em>
+            </div>
+          </div>
+          <div class="chips" id="chips"></div>
+          <form class="pregunta" id="form" autocomplete="off">
+            <label class="sr" for="q">Tu pregunta al oráculo</label>
+            <input id="q" type="text" placeholder="Escribe aquí tu cuestión sobre la obra…" maxlength="200">
+            <button type="submit">Consultar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SONORIZACIÓN: EL PODCAST DEL BÚNKER -->
+  <section class="seccion" id="sonorizacion" aria-labelledby="t-son" tabindex="-1">
+    <div class="banda b-azul">
+      <div class="cont">
+        <h2 id="t-son">Sonorización</h2>
+        <a class="volver" href="#indice">← Volver al índice</a>
+      </div>
+    </div>
+    <div class="cont">
+      <div class="marco-bunker">
+        <div class="cutre">
+          <div class="marq" aria-hidden="true">
+            <span>¡¡¡ ATENCIÓN !!! EL FIN DEL MUNDO ES MAÑANA — ESCUCHA EL PODCAST DEL BÚNKER ANTES DE QUE SE CORTE LA SEÑAL — ¡¡¡ TRANSMISIÓN DE EMERGENCIA !!!</span>
+          </div>
+          <h3>~* EL PODCAST DEL FIN DEL MUNDO *~</h3>
+          <p style="text-align:center">
+            <span class="parp">⚠ FRECUENCIA CLANDESTINA ACTIVA ⚠</span> · Oyentes refugiados: <span class="cont-v">000013</span>
+          </p>
+          <div class="rej">
+            <div>
+              <div class="caja">
+                <h4>¿De qué va este podcast?</h4>
+                <p>Bienvenidos, supervivientes. Transmitiendo en onda corta desde las catacumbas: hoy desentrañamos la tragedia de Salva, el muchacho que creyó ver las señales del apocalipsis cuando en verdad solo presenciaba la agonía de un amor de cinco años.</p>
+                <p>Analizamos las campanas, el silbido metálico del insomnio, las tijeras de Átropos y la psicología de la negación. Si contemplaste el corto y el estupor te nubló el entendimiento, este documento sonoro fue grabado para ti.</p>
+              </div>
+              <div class="caja" style="margin-top:0.8rem">
+                <h4>Videopodcast oficial</h4>
+                <div class="vid" id="videopodcast">
+                  <p style="margin:0">PRÓXIMAMENTE EN ESTA FRECUENCIA, si el cosmos resiste.</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="caja">
+                <figure>
+                  <svg viewBox="0 0 48 48" role="img" aria-label="El Profeta del Dial en su trinchera sonora">
+                    <rect width="48" height="48" fill="#423b6b"/>
+                    <rect y="34" width="48" height="14" fill="#8f1b16"/>
+                    <rect x="14" y="10" width="20" height="24" fill="#f1c9a5"/>
+                    <rect x="12" y="6" width="24" height="8" fill="#333"/>
+                    <rect x="10" y="14" width="4" height="12" fill="#111"/>
+                    <rect x="34" y="14" width="4" height="12" fill="#111"/>
+                    <rect x="17" y="18" width="5" height="3" fill="#000"/>
+                    <rect x="26" y="18" width="5" height="3" fill="#000"/>
+                    <rect x="20" y="28" width="8" height="2" fill="#520a0a"/>
+                    <rect x="16" y="30" width="16" height="6" fill="#222"/>
+                  </svg>
+                  <figcaption>El Profeta del Dial, emitiendo en directo.</figcaption>
+                </figure>
+              </div>
+              <div class="caja" style="margin-top:0.8rem">
+                <h4>Ecos de la audiencia</h4>
+                <div class="com"><b>superviviente_77:</b> Llevo tres días sin dormir en vela oyendo el dial. Gracias, Profeta.</div>
+                <div class="com"><b>aurora_fan:</b> Creí que era un coloquio de cine y acabé acaparando provisiones.</div>
+                <div class="com"><b>anonimo:</b> Lo del corte del hilo me erizó la piel. El mejor análisis.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDICIÓN Y POSPRODUCCIÓN: PINACOTECA DE CUADROS -->
+  <section class="seccion s-ed" id="edicion" aria-labelledby="t-ed" tabindex="-1">
+    <div class="banda b-gris">
+      <div class="cont">
+        <h2 id="t-ed">Edición y Posproducción</h2>
+        <a class="volver" href="#indice">← Volver al índice</a>
+      </div>
+    </div>
+    <div class="cont cuadros">
+      <figure class="cuadro">
+        <div class="marco">
+          <button class="mb-btn" id="abrir-mb" type="button" aria-haspopup="dialog" aria-label="Ampliar el lienzo del moodboard">
+            <div class="tablero" id="mb-mini"></div>
+            <span class="lupa">🔍 Inspeccionar lienzo</span>
+          </button>
+        </div>
+        <figcaption class="placa">Moodboard · Atmósfera y Texturas</figcaption>
+      </figure>
+
+      <figure class="cuadro">
+        <div class="marco">
+          <div class="pantalla" id="moodreel">
+            <p style="margin:0">El moodreel audiovisual quedará expuesto aquí próximamente.</p>
+          </div>
+        </div>
+        <figcaption class="placa">Moodreel · Luz y Ritmo</figcaption>
+      </figure>
+    </div>
+
+    <!-- DIÁLOGO DEL VISOR -->
+    <dialog id="visor" aria-labelledby="t-visor">
+      <div class="barra">
+        <h3 id="t-visor">Lienzo del Moodboard: haz clic en las gemas rojas</h3>
+        <span>
+          <button type="button" id="zoom" aria-pressed="false">Acercar lienzo</button>
+          <button type="button" id="cerrar-visor">Cerrar</button>
+        </span>
+      </div>
+      <div class="lienzo" id="lienzo">
+        <div class="tablero" id="mb-grande"></div>
+      </div>
+    </dialog>
+  </section>
+</main>
+
+<!-- PIE DE PÁGINA COLOFÓN -->
+<footer class="pie">
+  <div class="cont">
+    <div class="floron-pie">❦ ⚜ ❦</div>
+    <p><strong>Lo que muere dentro</strong></p>
+    <p style="font-style:italic;color:var(--oro);font-size:0.95rem">
+      Proyecto Transversal de 3º de Comunicación Audiovisual · Universidad Francisco de Vitoria · Grupo 1
+    </p>
+    <ul>
+      <li>Marina Charlo Novillo</li>
+      <li>Adrián Romero</li>
+      <li>Gonzalo Lorite</li>
+      <li>Eduardo Nieto</li>
+      <li>Salvador Permuy</li>
+      <li>Moira del Corro</li>
+      <li>Lucas Espejo</li>
+    </ul>
+    <a class="subir" href="#inicio">↑ Retornar al prólogo del sitio</a>
+  </div>
+</footer>
+
+<!-- SÍMBOLO DE LA TROMPETA DORADA (Clarín barroco labrado) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="oro" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff5c0"/>
+      <stop offset="25%" stop-color="#f4d368"/>
+      <stop offset="65%" stop-color="#9a6f00"/>
+      <stop offset="100%" stop-color="#4e380a"/>
+    </linearGradient>
+    <symbol id="svg-trompeta" viewBox="0 0 220 90">
+      <!-- Tubo principal del clarín con claroscuro metálico -->
+      <path d="M10 62 L148 40 L148 48 L10 70Z" fill="url(#oro)" stroke="#3e2607" stroke-width="1.8"/>
+      <!-- Pabellón acampanado con moldura barroca -->
+      <path d="M147 38C168 36 192 22 208 4 L213 7 C202 30 202 54 213 77 L208 80 C192 58 168 52 147 48Z" fill="url(#oro)" stroke="#3e2607" stroke-width="1.8"/>
+      <!-- Embocadura -->
+      <ellipse cx="9" cy="66" rx="5" ry="6" fill="url(#oro)" stroke="#3e2607" stroke-width="1.8"/>
+      <!-- Guarniciones mecánicas y adornos salomónicos -->
+      <rect x="58" y="44" width="8" height="23" rx="2" fill="#fff0a8" stroke="#3e2607" stroke-width="1.2" transform="rotate(-9 62 55)"/>
+      <rect x="98" y="38" width="8" height="23" rx="2" fill="#fff0a8" stroke="#3e2607" stroke-width="1.2" transform="rotate(-9 102 49)"/>
+      <circle cx="178" cy="44" r="3" fill="#fff5c0" stroke="#3e2607"/>
+    </symbol>
+  </defs>
+</svg>
+
+<script>
+/* ==========================================================================
+   CONFIGURACIÓN (Editar aquí según las necesidades de entrega)
+   ========================================================================== */
+const CONFIG = {
+  estreno: "2027-01-15T20:00:00+01:00", // Fecha de la cuenta atrás
+  cortoSrc: "",        // URL del vídeo del mediometraje (.mp4)
+  moodreelSrc: "",     // URL del vídeo del moodreel (.mp4)
+  videopodcastSrc: "", // URL del embed (iframe) del videopodcast
+  moodboardSrc: "",    // Archivo de imagen del moodboard (ej. "moodboard.jpg")
+  virgilioEndpoint: "" // Opcional: servidor para respuestas IA dinámicas
+};
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+
+/* Medición dinámica de la cabecera */
+const cab = $(".cab-grupo");
+const medirCab = () => {
+  if (cab) document.documentElement.style.setProperty("--hh", cab.offsetHeight + "px");
+};
+medirCab();
+window.addEventListener("resize", medirCab);
+
+/* ==========================================================================
+   HILOS DE LAS PARCAS (Animación del Prólogo con vibración y tensión física)
+   ========================================================================== */
+(function () {
+  const svg = $("#hilos"), NS = "http://www.w3.org/2000/svg";
+  if (!svg) return;
+  const n = innerWidth < 600 ? 26 : 44, hilos = [];
+  
+  for (let i = 0; i < n; i++) {
+    const x0 = Math.random() * 100, x1 = Math.random() * 100;
+    const cx = (x0 + x1) / 2 + (Math.random() - 0.5) * 45;
+    const pts = [];
+    for (let k = 0; k <= 14; k++) {
+      const t = k / 14, u = 1 - t;
+      pts.push([u * u * x0 + 2 * u * t * cx + t * t * x1, -4 + t * 108]);
+    }
+    const m = 6 + Math.floor(Math.random() * 3);
+    
+    // Tonalidades de seda carmesí y hebras de oro
+    const esOro = Math.random() < 0.22;
+    const col = esOro 
+      ? `hsl(${42 + Math.random() * 8}, ${75 + Math.random() * 20}%, ${45 + Math.random() * 25}%)`
+      : `hsl(${352 + Math.random() * 10}, ${65 + Math.random() * 25}%, ${24 + Math.random() * 16}%)`;
+    const w = esOro ? (1.2 + Math.random() * 1.5) : (1.4 + Math.random() * 2.2);
+    
+    const mk = (a) => {
+      const p = document.createElementNS(NS, "polyline");
+      p.setAttribute("points", a.map(q => q.join(",")).join(" "));
+      p.setAttribute("stroke", col);
+      p.setAttribute("stroke-width", w);
+      p.setAttribute("stroke-linecap", "round");
+      p.style.transition = "transform 0.1s ease-out";
+      svg.appendChild(p);
+      return p;
+    };
+    
+    hilos.push({
+      s: mk(pts.slice(0, m + 1)),
+      b: mk(pts.slice(m)),
+      at: 0.03 + Math.random() * 0.55,
+      dx: (Math.random() - 0.5) * 16
+    });
+  }
+
+  const sec = $("#portada"), tit = $("#titulo"), aviso = $("#aviso");
+  let tick = false;
+
+  function pinta() {
+    tick = false;
+    if (!sec) return;
+    const p = reduce ? 1 : clamp((scrollY - sec.offsetTop) / (sec.offsetHeight - innerHeight));
+    
+    hilos.forEach(h => {
+      const q = clamp((p - h.at) / 0.22);
+      // Movimiento con tensión de cuerda cortada
+      h.s.style.transform = `translate(${-h.dx * q}px, ${-q * 42}px) rotate(${-q * 4}deg)`;
+      h.b.style.transform = `translate(${h.dx * q}px, ${q * 42}px) rotate(${q * 4}deg)`;
+      h.s.style.opacity = h.b.style.opacity = 1 - q;
+    });
+
+    const t = clamp((p - 0.42) / 0.38);
+    if (tit) tit.style.opacity = reduce ? 1 : 0.08 + t * 0.92;
+    if (aviso) aviso.style.opacity = clamp(1 - p * 5.5);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!tick) { tick = true; requestAnimationFrame(pinta); }
+  }, { passive: true });
+  window.addEventListener("resize", pinta);
+  pinta();
+})();
+
+/* ==========================================================================
+   CUENTA ATRÁS: RELOJ MEMENTO MORI
+   ========================================================================== */
+(function () {
+  const meta = new Date(CONFIG.estreno).getTime();
+  const z = v => String(v).padStart(2, "0");
+
+  function paso() {
+    let d = Math.max(0, meta - Date.now()) / 1000;
+    const rd = $("#r-d"), rh = $("#r-h"), rm = $("#r-m"), rs = $("#r-s"), rnota = $("#r-nota");
+    if (rd) rd.textContent = z(Math.floor(d / 86400));
+    if (rh) rh.textContent = z(Math.floor(d % 86400 / 3600));
+    if (rm) rm.textContent = z(Math.floor(d % 3600 / 60));
+    if (rs) rs.textContent = z(Math.floor(d % 60));
+    if (rnota) rnota.textContent = d > 0 ? "" : "El momento ha llegado. El velo se ha rasgado.";
+  }
+  paso();
+  setInterval(paso, 1000);
+
+  if (CONFIG.cortoSrc) $("#corto-video").innerHTML = `<video controls src="${CONFIG.cortoSrc}"></video>`;
+  if (CONFIG.moodreelSrc) $("#moodreel").innerHTML = `<video controls src="${CONFIG.moodreelSrc}"></video>`;
+  if (CONFIG.videopodcastSrc) $("#videopodcast").innerHTML = `<iframe src="${CONFIG.videopodcastSrc}" title="Videopodcast" allowfullscreen></iframe>`;
+})();
+
+/* ==========================================================================
+   ÍNDICE: ROTURA Y REANUDACIÓN DE LOS HILOS
+   ========================================================================== */
+(function () {
+  const items = $$(".hilo");
+  items.forEach(li => {
+    const a = $("a", li);
+    if (!a) return;
+    a.addEventListener("click", e => {
+      e.preventDefault();
+      const href = a.getAttribute("href");
+      const dest = $(href);
+      if (!dest) return;
+      
+      li.classList.add("roto");
+      setTimeout(() => {
+        dest.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+        dest.focus({ preventScroll: true });
+        history.replaceState(null, "", href);
+      }, reduce ? 0 : 520);
+    });
+  });
+
+  const ind = $("#indice");
+  if (ind) {
+    new IntersectionObserver(es => {
+      if (!es[0].isIntersecting) {
+        items.forEach(li => li.classList.remove("roto"));
+      }
+    }, { rootMargin: `-${cab ? cab.offsetHeight + 10 : 80}px 0px 0px 0px` }).observe(ind);
+  }
+})();
+
+/* ==========================================================================
+   EL LIBRO DE LA SINOPSIS: APERTURA Y CIERRE DEL TOMO
+   ========================================================================== */
+(function () {
+  const tapa = $("#tapa"), ab = $("#abierto"), cerrar = $("#cerrar");
+  if (!tapa || !ab) return;
+
+  tapa.addEventListener("click", () => {
+    tapa.classList.add("abre");
+    tapa.setAttribute("aria-expanded", "true");
+    setTimeout(() => {
+      tapa.style.display = "none";
+      ab.classList.add("on");
+      const h3 = $("h3", ab);
+      if (h3) {
+        h3.setAttribute("tabindex", "-1");
+        h3.focus({ preventScroll: true });
+      }
+    }, reduce ? 0 : 650);
+  });
+
+  if (cerrar) {
+    cerrar.addEventListener("click", () => {
+      ab.classList.remove("on");
+      tapa.style.display = "";
+      tapa.classList.remove("abre");
+      tapa.setAttribute("aria-expanded", "false");
+      tapa.focus();
+    });
+  }
+})();
+
+/* ==========================================================================
+   RETABLO DE LAS TROMPETAS
+   ========================================================================== */
+$$(".trompeta").forEach(b => b.addEventListener("click", () => {
+  const abre = b.getAttribute("aria-expanded") !== "true";
+  $$(".trompeta").forEach(x => {
+    x.setAttribute("aria-expanded", "false");
+    const t = $("#tema-" + x.dataset.t);
+    if (t) t.classList.remove("on");
+  });
+  if (abre) {
+    b.setAttribute("aria-expanded", "true");
+    const target = $("#tema-" + b.dataset.t);
+    if (target) target.classList.add("on");
+  }
+}));
+
+/* ==========================================================================
+   EL ORÁCULO DE VIRGILIO
+   ========================================================================== */
+(function () {
+  const BASE = [
+    [["hola", "buenas", "saludos", "salve"], "Salve, viajero. Pregunta por la tragedia de Salva, la entereza de Aurora, el destino de las tres Parcas o la revelación del mediometraje."],
+    [["de que trata", "sinopsis", "argumento", "trama", "historia", "va el corto", "titulo"], "«Lo que muere dentro» narra cómo Salva recibe de su amada el anuncio de que mañana será el fin del mundo. Todo lo contemplamos bajo el tamiz de su mirada desquiciada, y las calles parecen confirmar la catástrofe. Mas al llegar al desenlace, el misterio se esclarece: nadie anunció el fin del planeta; Aurora simplemente ya no le amaba. El apocalipsis era el terror a su partida."],
+    [["salva", "protagonista", "salvador"], "Salva (Salvador) consagró cinco años a Aurora; ella constituía su morada y su universo entero. Parece habitar en un sopor perpetuo, frágil e incapaz de conciliarse con el entorno. Se creía llamado a salvar a Aurora, ignorando que el único mundo que agonizaba era el suyo."],
+    [["aurora", "novia", "pareja", "ella"], "Aurora evoca a la diosa del amanecer que disipa las tinieblas. Es comprensiva, dulce y firme. Su despedida no brota de la inquina sino del desamor sereno: un cierre sellado que no concede falsas esperanzas."],
+    [["parca", "hilo", "cloto", "laquesis", "atropos", "tijeras"], "Las tres Parcas encarnan la única dimensión sobrenatural: Cloto hila el vellón, Láquesis calibra su extensión y Átropos corta la hebra. Carentes de rostro y de pasiones humanas, abren el drama anunciando la siega y cortan el hilo en el instante exacto en que Aurora pronuncia su adiós."],
+    [["senor mayor", "viejo", "anciano", "angel interprete", "mentor"], "El anciano halla su raíz en el Ángel Intérprete del Apocalipsis de San Juan. Habla con naturalidad sobre la finitud de la existencia, sin sospechar que Salva traduce sus sentencias como oráculos místicos que corroboran su ruina."],
+    [["tres realidades", "realidades", "niveles", "objetiva"], "Se entrelazan tres planos: el objetivo y cotidiano; la paranoia subjetiva de Salva (el rumor urbano transfigurado en alarma); y un tercer plano en el que las coincidencias fatales se conjugan para dotar de aparente verosimilitud a su pesadilla."],
+    [["apocalipsis", "revelacion", "significa", "teologia", "religion"], "Apocalipsis procede del vocablo griego «apokálypsis»: correr el velo, la revelación. La obra no escenifica la aniquilación de la Tierra, sino el momento en que Salva descubre que el mundo que creía habitar jamás existió."],
+    [["trompeta"], "Al clausurarse cada estación del deambular de Salva resuena un clarín alegórico, eco de las siete trompetas del libro de Juan. La verdad no irrumpe súbita, sino por revelaciones sucesivas."],
+    [["jung", "psicolog", "individuacion", "inconsciente"], "Bajo el prisma de Carl Jung, la catástrofe apocalíptica simboliza el colapso de un ego incapaz de sostener su homeostasis. Salva parte de la ecuación «Salva + Ella = Cosmos», y el relato relata el desglose agónico de dicha identidad."],
+    [["giro", "final", "colgante", "ruptura", "ultimo"], "En el paraje secreto que ambos compartían, Aurora le entrega el colgante que ostenta su inicial y le ruega que no vuelva a buscarla. Empero, el relato no sucumbe en la ceniza: un ademán postrero sugiere la posibilidad de un renacimiento."],
+    [["estructura", "etapas", "cinco", "fases"], "Cinco estaciones: la advertencia, la alteración, el acúmulo de portentos, la revelación y, finalmente, la fractura y renacimiento, cuando las Parcas seccionan la hebra."],
+    [["podcast", "sonorizacion", "sonido", "voz"], "En Sonorización, el grupo concibe un podcast clandestino: una disertación profunda sobre la dramaturgia sonora, las campanas, las voces interiores y el verdadero alcance de la alegoría."],
+    [["inteligencia artificial", "ia ", "imagenes", "preproduccion", "cine", "iglesia"], "La inteligencia artificial se empleó en la preproducción para forjar el imaginario conceptual de los encuadres antes del rodaje (la iglesia penumbrosa, el protagonista en la sala vacía, la urbe hostil)."],
+    [["edicion", "mood", "posproduccion", "postproduccion"], "En Edición y Posproducción se concibió un moodreel que plasma el insomnio, la paranoia y la confusión entre el delirio y la realidad objetiva."],
+    [["paranoia", "mirada", "miedo"], "Quien apresura el paso parece huir de un cataclismo; un susurro cualquiera se antoja una elegía. La paranoia brota cuando el alma ya intuye la pérdida y la disfraza de fin de los tiempos."],
+    [["grupo", "integrantes", "equipo", "quien", "hizo"], "Grupo 1 de 3º de Comunicación Audiovisual (Universidad Francisco de Vitoria, Madrid): Marina Charlo Novillo, Adrián Romero, Gonzalo Lorite, Eduardo Nieto, Salvador Permuy, Moira del Corro y Lucas Espejo."]
+  ];
+
+  const SUG = ["¿De qué trata la historia?", "¿Quiénes son las Parcas?", "¿Qué simbolizan las trompetas?", "¿Cuál es el giro final?"];
+  const reg = $("#registro"), q = $("#q");
+  const norm = s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") + " ";
+
+  const msg = (t, c) => {
+    const d = document.createElement("div");
+    d.className = "msg " + c;
+    d.textContent = t;
+    if (c === "vir") {
+      const e = document.createElement("em");
+      e.textContent = "— Virgilio";
+      d.appendChild(e);
+    }
+    reg.appendChild(d);
+    reg.scrollTop = reg.scrollHeight;
+  };
+
+  function local(t) {
+    const n = norm(t);
+    let best = null, sc = 0;
+    BASE.forEach(([ks, r]) => {
+      const s = ks.filter(k => n.includes(k)).length;
+      if (s > sc) { sc = s; best = r; }
+    });
+    return best || "Aún no hallo esa respuesta en los anales del grupo. Pregúntame por Salva, Aurora, las tres Parcas, el giro final o las trompetas sagradas.";
+  }
+
+  async function responde(t) {
+    if (CONFIG.virgilioEndpoint) {
+      try {
+        const r = await fetch(CONFIG.virgilioEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pregunta: t })
+        });
+        const j = await r.json();
+        if (j.respuesta) return j.respuesta;
+      } catch (e) { /* recurre a la base local */ }
+    }
+    return local(t);
+  }
+
+  async function pregunta(t) {
+    t = t.trim();
+    if (!t) return;
+    msg(t, "tu");
+    if (q) q.value = "";
+    const r = await responde(t);
+    setTimeout(() => msg(r, "vir"), reduce ? 0 : 450);
+  }
+
+  const form = $("#form");
+  if (form) {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      if (q) pregunta(q.value);
+    });
+  }
+
+  const chips = $("#chips");
+  if (chips) {
+    SUG.forEach(s => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = s;
+      b.onclick = () => pregunta(s);
+      chips.appendChild(b);
+    });
+  }
+})();
+
+/* ==========================================================================
+   MOODBOARD: PINACOTECA DE CUADROS & PUNTOS DE ANÁLISIS
+   ========================================================================== */
+(function () {
+  const PUNTOS = [
+    [18, 28, "Insomnio y Claroscuro", "Cromatismo gélido y crepuscular: Salva habita un letargo sonámbulo, extenuado por el presagio del fin."],
+    [70, 24, "La Paranoia de la Mirada", "Los acontecimientos ordinarios tamizados por el terror: la reverberación acústica engendra zozobra constante."],
+    [42, 62, "Reflejos y Vidrieras", "Superficies especulares que devuelven la realidad distorsionada por la psique quebrada de Salva."],
+    [80, 68, "El Clarín Apocalíptico", "Resonancia de las trompetas místicas: clausura cada jornada anunciando la consumación de la verdad."],
+    [24, 80, "El Hilo y las Tres Parcas", "Tijeras, rueca y tinieblas: el único principio trascendente ante el cual la voluntad de Salva es estéril."],
+    [58, 42, "El Colgante de Aurora", "La medalla con la inicial de Salva. Su restitución certifica el desprendimiento irreversible."]
+  ];
+
+  const base = () => CONFIG.moodboardSrc
+    ? `<img src="${CONFIG.moodboardSrc}" alt="Moodboard pictórico del mediometraje">`
+    : `<div class="mosaico" role="img" aria-label="Mosaico cromático provisional del mediometraje">
+        <span>Insomnio</span>
+        <span>Paranoia</span>
+        <span>Urbe Tenebrosa</span>
+        <span>Las Parcas</span>
+        <span>Reflejos & Trompeta</span>
+        <span>El Hilo Fatal</span>
+      </div>`;
+
+  const mini = $("#mb-mini");
+  if (mini) mini.innerHTML = base();
+
+  const grande = $("#mb-grande");
+  if (grande) {
+    grande.innerHTML = base() + PUNTOS.map(([x, y, t, d]) =>
+      `<button class="punto ${x > 60 ? "izq" : x < 30 ? "der" : ""}" style="left:${x}%;top:${y}%" aria-expanded="false" aria-label="${t}">
+        <span class="tip" role="tooltip"><b>${t}</b>${d}</span>
+       </button>`).join("");
+
+    $$(".punto", grande).forEach(p => p.addEventListener("click", () => {
+      const a = p.getAttribute("aria-expanded") === "true";
+      $$(".punto", grande).forEach(o => o.setAttribute("aria-expanded", "false"));
+      p.setAttribute("aria-expanded", String(!a));
+    }));
+  }
+
+  const v = $("#visor"), z = $("#zoom");
+  const abrirMb = $("#abrir-mb"), cerrarV = $("#cerrar-visor");
+  
+  if (abrirMb && v) abrirMb.addEventListener("click", () => v.showModal());
+  if (cerrarV && v) cerrarV.addEventListener("click", () => v.close());
+  if (v) v.addEventListener("click", e => { if (e.target === v) v.close(); });
+  
+  if (z) {
+    z.addEventListener("click", () => {
+      const l = $("#lienzo");
+      if (!l) return;
+      const on = l.classList.toggle("zoom");
+      z.setAttribute("aria-pressed", on);
+      z.textContent = on ? "Alejar lienzo" : "Acercar lienzo";
+    });
+  }
+})();
+</script>
+</body>
+</html>
